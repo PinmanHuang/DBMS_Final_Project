@@ -1,0 +1,6 @@
+framework module Pods_DBMS_Final_Project_DBMS_Final_ProjectUITests {
+  umbrella header "Pods-DBMS_Final_Project-DBMS_Final_ProjectUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}
