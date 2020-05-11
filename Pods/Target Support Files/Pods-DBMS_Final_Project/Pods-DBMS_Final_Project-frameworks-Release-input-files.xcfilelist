@@ -1,2 +1,3 @@
 ${PODS_ROOT}/Target Support Files/Pods-DBMS_Final_Project/Pods-DBMS_Final_Project-frameworks.sh
 ${BUILT_PRODUCTS_DIR}/SQLite.swift/SQLite.framework
+${BUILT_PRODUCTS_DIR}/SideMenu/SideMenu.framework

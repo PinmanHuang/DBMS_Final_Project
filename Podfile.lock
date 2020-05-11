@@ -1,18 +1,22 @@
 PODS:
+  - SideMenu (6.4.8)
   - SQLite.swift (0.12.2):
     - SQLite.swift/standard (= 0.12.2)
   - SQLite.swift/standard (0.12.2)
 
 DEPENDENCIES:
+  - SideMenu
   - SQLite.swift (~> 0.12.0)
 
 SPEC REPOS:
   trunk:
+    - SideMenu
     - SQLite.swift
 
 SPEC CHECKSUMS:
+  SideMenu: 4a891be552d30bb6fa87ad404d62e485f8450c34
   SQLite.swift: d2b4642190917051ce6bd1d49aab565fe794eea3
 
-PODFILE CHECKSUM: e8df8f476937c8dd9307533dc4eee62bd969f8c3
+PODFILE CHECKSUM: 37c3b261df2f666b90bbf30ba4ca4fbb5082f5d8
 
 COCOAPODS: 1.8.4

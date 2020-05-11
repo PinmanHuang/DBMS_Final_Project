@@ -7,6 +7,7 @@ target 'DBMS_Final_Project' do
 
   # Pods for DBMS_Final_Project
   pod 'SQLite.swift', '~> 0.12.0'
+  pod 'SideMenu'
 
   target 'DBMS_Final_ProjectTests' do
     inherit! :search_paths
