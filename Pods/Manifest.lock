@@ -1,22 +1,30 @@
 PODS:
+  - DropDown (2.3.13)
   - SideMenu (6.4.8)
   - SQLite.swift (0.12.2):
     - SQLite.swift/standard (= 0.12.2)
   - SQLite.swift/standard (0.12.2)
+  - Toast-Swift (5.0.1)
 
 DEPENDENCIES:
+  - DropDown
   - SideMenu
   - SQLite.swift (~> 0.12.0)
+  - Toast-Swift (~> 5.0.1)
 
 SPEC REPOS:
   trunk:
+    - DropDown
     - SideMenu
     - SQLite.swift
+    - Toast-Swift
 
 SPEC CHECKSUMS:
+  DropDown: 8a2116376c1981888557f72ec2ffc9a5e0e456ec
   SideMenu: 4a891be552d30bb6fa87ad404d62e485f8450c34
   SQLite.swift: d2b4642190917051ce6bd1d49aab565fe794eea3
+  Toast-Swift: 9b6a70f28b3bf0b96c40d46c0c4b9d6639846711
 
-PODFILE CHECKSUM: 37c3b261df2f666b90bbf30ba4ca4fbb5082f5d8
+PODFILE CHECKSUM: 6a7e749b2f5843e581a09564d3977a9754450e24
 
 COCOAPODS: 1.8.4

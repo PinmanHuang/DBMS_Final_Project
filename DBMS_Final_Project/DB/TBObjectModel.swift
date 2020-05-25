@@ -66,8 +66,8 @@ class logObject {
     
     static let LOG = Table("LOG")
     static let DocID = Expression<Int64>("DocID")
-    static let PatID = Expression<String?>("PatID")
-    static let TreID = Expression<String>("TreID")
+    static let PatID = Expression<Int64>("PatID")
+    static let TreID = Expression<Int64>("TreID")
     static let Timestamp = Expression<String>("Timestamp")
     
 }
