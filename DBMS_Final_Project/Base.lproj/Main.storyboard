@@ -557,6 +557,7 @@
                     <connections>
                         <outlet property="selectBtn" destination="0Pp-l6-d94" id="0ek-BL-ogK"/>
                         <outlet property="selectView" destination="c70-cx-XtM" id="wJR-xb-Hqu"/>
+                        <outlet property="tableView" destination="jvT-Ys-7h5" id="Ug0-wG-Doz"/>
                         <outlet property="whereLabel" destination="VPb-xO-grJ" id="yVs-FQ-xCn"/>
                     </connections>
                 </viewController>

@@ -15,6 +15,7 @@ class BtnSelectViewController: UIViewController {
     @IBOutlet var selectView: UIView!
     @IBOutlet var selectBtn: UIButton!
     @IBOutlet var whereLabel: UILabel!
+    @IBOutlet var tableView: UITableView!
     
     var selectTB = 0
     let whereID = ["DocID", "DivID", "HosID", "PatID", "TreID", "DocID"]
