@@ -15,16 +15,16 @@ class ViewController: UIViewController {
 
     @IBOutlet weak var resultLabel: UILabel!
     
-    let doctordata = [["doctor_1@gmail.com", "doctor_1", "C001", "0900000001", "1"],
-                      ["doctor_2@gmail.com", "doctor_2", "C002", "0900000002", "2"],
-                      ["doctor_3@gmail.com", "doctor_3", "C003", "0900000003", "3"],
-                      ["doctor_4@gmail.com", "doctor_4", "C004", "0900000004", "4"],
-                      ["doctor_5@gmail.com", "doctor_5", "C005", "0900000005", "5"],
-                      ["doctor_6@gmail.com", "doctor_6", "C006", "0900000006", "6"],
-                      ["doctor_7@gmail.com", "doctor_7", "C007", "0900000007", "7"],
-                      ["doctor_8@gmail.com", "doctor_8", "C008", "0900000008", "8"],
-                      ["doctor_9@gmail.com", "doctor_9", "C009", "0900000009", "9"],
-                      ["doctor_10@gmail.com", "doctor_10", "C010", "0900000010", "10"]]
+    let doctordata = [["doctor_1@gmail.com", "doctor_1", "C001", "10001", "1"],
+                      ["doctor_2@gmail.com", "doctor_2", "C002", "20002", "2"],
+                      ["doctor_3@gmail.com", "doctor_3", "C003", "30003", "3"],
+                      ["doctor_4@gmail.com", "doctor_4", "C004", "40004", "4"],
+                      ["doctor_5@gmail.com", "doctor_5", "C005", "50005", "5"],
+                      ["doctor_6@gmail.com", "doctor_6", "C006", "60006", "6"],
+                      ["doctor_7@gmail.com", "doctor_7", "C007", "70007", "7"],
+                      ["doctor_8@gmail.com", "doctor_8", "C008", "80008", "8"],
+                      ["doctor_9@gmail.com", "doctor_9", "C009", "90009", "9"],
+                      ["doctor_10@gmail.com", "doctor_10", "C010", "10010", "10"]]
     let divisiondata = [["General Medicine", "D001", "1", "1"],
                         ["Surgery", "D002", "1", "2"],
                         ["Pediatrics", "D003", "1", "3"],
@@ -142,7 +142,7 @@ class ViewController: UIViewController {
                         doctorsObject.DocEmail <- data[0],
                         doctorsObject.DocName <- data[1],
                         doctorsObject.Room <- data[2],
-                        doctorsObject.DocPhone <- data[3],
+                        doctorsObject.Salary <- Int64(data[3])!,
                         doctorsObject.DivID <- Int64(data[4])!
                 ))
                 self.view.makeToast("inserted id: \(rowid!)")
@@ -207,7 +207,7 @@ class ViewController: UIViewController {
                     doctorsObject.DocEmail <- "doctor1@gmail.com",
                     doctorsObject.DocName <- "doctor1",
                     doctorsObject.Room <- "C100",
-                    doctorsObject.DocPhone <- "0999999999",
+                    doctorsObject.Salary <- 100,
                     doctorsObject.DivID <- 0
             ))
             self.view.makeToast("inserted id: \(rowid!)")
@@ -237,7 +237,7 @@ class ViewController: UIViewController {
             t.column(doctorsObject.DocID, primaryKey: true)
             t.column(doctorsObject.DocName)
             t.column(doctorsObject.Room)
-            t.column(doctorsObject.DocPhone)
+            t.column(doctorsObject.Salary)
             t.column(doctorsObject.DocEmail, unique: true)
             t.column(doctorsObject.DivID)
         })

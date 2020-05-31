@@ -60,7 +60,7 @@ class BtnInsertViewController: UIViewController {
                         doctorsObject.DocID <- Int64(field_1.text!)!,
                         doctorsObject.DocName <- String(field_2.text!),
                         doctorsObject.Room <- String(field_3.text!),
-                        doctorsObject.DocPhone <- String(field_4.text!),
+                        doctorsObject.Salary <- Int64(field_4.text!)!,
                         doctorsObject.DocEmail <- String(field_5.text!),
                         doctorsObject.DivID <- Int64(field_6.text!)!
                 ))
@@ -138,7 +138,7 @@ class BtnInsertViewController: UIViewController {
             label_1.text = "DocID"
             label_2.text = "DocName"
             label_3.text = "Room"
-            label_4.text = "DocPhone"
+            label_4.text = "Salary"
             label_5.text = "DocEmail"
             label_6.text = "DivID"
         case 1:

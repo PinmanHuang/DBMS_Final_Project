@@ -15,7 +15,7 @@ class SQLInputViewController: UIViewController {
     var selectIndex = 0                 // select Query id
     var typeIndex = 0                   // select Query Type id
     var typeInit = ["SELECT-FROM-WHERE", "IN", "COUNT"]
-    var SQLInit = ["SELECT * FROM DOCTORS WHERE DocName='doctor_1'", "SELECT * FROM DOCTORS IN", "SELECT COUNT(ID) FROM DOCTORS"]
+    var SQLInit = ["SELECT * FROM DOCTORS WHERE DocName='doctor_1'", "SELECT * FROM DOCTORS IN", "SELECT DivID, COUNT(*), AVG(Salary) FROM DOCTORS GROUP BY DivID"]
     
     var stmtLen = 0
     var attrs = Array<String>()
@@ -113,10 +113,16 @@ class SQLInputViewController: UIViewController {
         let defaultSQL = [
             ["SELECT * FROM DOCTORS WHERE DocName='Apple'",
              "DELETE FROM DOCTORS WHERE DocName='Apple'",
-             "INSERT INTO DOCTORS ('DocName', 'Room', 'DocPhone', 'DocEmail', 'DivID') VALUES ('Apple', 'C111', '0900000111', 'apple@gmail.com', 10)",
-             "UPDATE DOCTORS SET 'DocPhone' = '0912345678' WHERE DocName='Apple'"],
+             "INSERT INTO DOCTORS ('DocName', 'Room', 'Salary', 'DocEmail', 'DivID') VALUES ('Apple', 'C111', 30000, 'apple@gmail.com', 10)",
+             "UPDATE DOCTORS SET 'Salary' = 40000 WHERE DocName='Apple'"],
             ["1", "2", "3", "4"],
-            ["01", "02", "03", "04", "05", "06"]]
+            ["SELECT DivID, COUNT(*), AVG(Salary) FROM DOCTORS GROUP BY DivID",                 // 取得各科室醫生數以及平均薪資
+             "SELECT DivID, COUNT(*), AVG(Salary), SUM(Salary) FROM DOCTORS GROUP BY DivID",    // 取得各科室醫生數以及平均薪資以及薪資總合
+             "SELECT MAX(Salary), MIN(Salary), AVG(Salary) FROM DOCTORS",                       // 取得醫生最高、最低、平均薪資
+             "SELECT MAX(Salary), MIN(Salary), AVG(Salary) FROM DOCTORS",                       // 取得醫生最高、最低、平均薪資
+             "SELECT DivID, COUNT(*), AVG(Salary) FROM DOCTORS GROUP BY DivID",                 // 取得各科室醫生數以及平均薪資
+             "SELECT DIVISIONS.DivID, DivName, COUNT(*) FROM DOCTORS, DIVISIONS WHERE DOCTORS.DivID=DIVISIONS.DivID GROUP BY DIVISIONS.DivID HAVING COUNT(*)>2"]    // 取得科室醫生數量大於2的科室資料
+        ]
         sqlTextView.text = defaultSQL[selectIndex][typeIndex]
     }
     

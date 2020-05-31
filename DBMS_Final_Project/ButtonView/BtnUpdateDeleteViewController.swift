@@ -75,7 +75,7 @@ class BtnUpdateDeleteViewController: UIViewController {
                     qTB.update(
                         doctorsObject.DocName <- String(field_2.text!),
                         doctorsObject.Room <- String(field_3.text!),
-                        doctorsObject.DocPhone <- String(field_4.text!),
+                        doctorsObject.Salary <- Int64(field_4.text!)!,
                         doctorsObject.DocEmail <- String(field_5.text!),
                         doctorsObject.DivID <- Int64(field_6.text!)!
                 ))
@@ -153,7 +153,7 @@ class BtnUpdateDeleteViewController: UIViewController {
             field_6.isHidden = false
             label_2.text = "DocName"
             label_3.text = "Room"
-            label_4.text = "DocPhone"
+            label_4.text = "Salary"
             label_5.text = "DocEmail"
             label_6.text = "DivID"
             let TB = doctorsObject.DOCTORS
@@ -162,7 +162,7 @@ class BtnUpdateDeleteViewController: UIViewController {
             for data in try! (db?.prepare(qTB))! {
                 field_2.text = data[doctorsObject.DocName]!
                 field_3.text = data[doctorsObject.Room]
-                field_4.text = data[doctorsObject.DocPhone]
+                field_4.text = "\(data[doctorsObject.Salary])"
                 field_5.text = data[doctorsObject.DocEmail]
                 field_6.text = "\(data[doctorsObject.DivID])"
             }

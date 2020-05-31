@@ -15,7 +15,7 @@ class doctorsObject {
     static let DocID = Expression<Int64>("DocID")
     static let DocName = Expression<String?>("DocName")
     static let Room = Expression<String>("Room")
-    static let DocPhone = Expression<String>("DocPhone")
+    static let Salary = Expression<Int64>("Salary")
     static let DocEmail = Expression<String>("DocEmail")
     static let DivID = Expression<Int64>("DivID")
     
