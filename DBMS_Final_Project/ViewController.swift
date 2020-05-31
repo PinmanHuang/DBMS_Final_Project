@@ -80,7 +80,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         // UI
-        self.view.addBackground()
+//        self.view.addBackground()
         
         // Side Menu
         setupSideMenu()
@@ -201,7 +201,7 @@ class ViewController: UIViewController {
         ).first!
         let db = try? Connection("\(path)/db.sqlite3")
         do {
-            // try db.run(users.insert(email <- "alice@mac.com", name <- "Alice"))
+//             try db.run(users.insert(email <- "alice@mac.com", name <- "Alice"))
             let rowid = try db?.run(
                 doctorsObject.DOCTORS.insert(
                     doctorsObject.DocEmail <- "doctor1@gmail.com",

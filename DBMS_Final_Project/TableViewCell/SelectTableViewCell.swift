@@ -11,6 +11,9 @@ import UIKit
 class SelectTableViewCell: UITableViewCell {
     
     @IBOutlet var label: UILabel!
+    @IBOutlet var label_2: UILabel!
+    @IBOutlet var dataLabel: UILabel!
+    @IBOutlet var dataLabel_2: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()

@@ -11,7 +11,7 @@ import SQLite
 import DropDown
 
 class BtnInsertViewController: UIViewController {
-    var selectIndex = 0
+    var selectIndex = 0     // select TB id
     
     @IBOutlet var selectBtn: UIButton!
     @IBOutlet var selectView: UIView!
