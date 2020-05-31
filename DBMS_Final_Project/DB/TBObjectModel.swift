@@ -65,6 +65,7 @@ class treatmentsObject {
 class logObject {
     
     static let LOG = Table("LOG")
+//    static let LogID = Expression<Int64>("LogID")
     static let DocID = Expression<Int64>("DocID")
     static let PatID = Expression<Int64>("PatID")
     static let TreID = Expression<Int64>("TreID")

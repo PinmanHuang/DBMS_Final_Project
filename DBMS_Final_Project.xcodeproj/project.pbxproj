@@ -22,6 +22,8 @@
 		E992F18C247C209C00814B82 /* BtnInsertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E992F18B247C209C00814B82 /* BtnInsertViewController.swift */; };
 		E9BFC34424653F9B00FC10A3 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9BFC34324653F9B00FC10A3 /* Extensions.swift */; };
 		E9BFC3472465470000FC10A3 /* TBObjectModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9BFC3462465470000FC10A3 /* TBObjectModel.swift */; };
+		E9D75710247FE47E009CCA90 /* SelectTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9D7570F247FE47E009CCA90 /* SelectTableViewCell.swift */; };
+		E9D75712247FED86009CCA90 /* BtnUpdateDeleteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9D75711247FED86009CCA90 /* BtnUpdateDeleteViewController.swift */; };
 		F7F1925B20A8D27946CC6E1A /* Pods_DBMS_Final_Project.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E5C4479CCC24A6E9F7D7B7AB /* Pods_DBMS_Final_Project.framework */; };
 /* End PBXBuildFile section */
 
@@ -71,6 +73,8 @@
 		E992F18B247C209C00814B82 /* BtnInsertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BtnInsertViewController.swift; sourceTree = "<group>"; };
 		E9BFC34324653F9B00FC10A3 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		E9BFC3462465470000FC10A3 /* TBObjectModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TBObjectModel.swift; sourceTree = "<group>"; };
+		E9D7570F247FE47E009CCA90 /* SelectTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectTableViewCell.swift; sourceTree = "<group>"; };
+		E9D75711247FED86009CCA90 /* BtnUpdateDeleteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BtnUpdateDeleteViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -149,6 +153,7 @@
 		E9402864245FF2B000DAC196 /* DBMS_Final_Project */ = {
 			isa = PBXGroup;
 			children = (
+				E9D7570E247FE44D009CCA90 /* TableViewCell */,
 				E963BACF247BC01A00D89302 /* ButtonView */,
 				E9BFC345246546DE00FC10A3 /* DB */,
 				E9BFC34224653F7D00FC10A3 /* Extensions */,
@@ -187,6 +192,7 @@
 			children = (
 				E992F189247BCABC00814B82 /* BtnSelectViewController.swift */,
 				E992F18B247C209C00814B82 /* BtnInsertViewController.swift */,
+				E9D75711247FED86009CCA90 /* BtnUpdateDeleteViewController.swift */,
 			);
 			path = ButtonView;
 			sourceTree = "<group>";
@@ -213,6 +219,14 @@
 				E9BFC3462465470000FC10A3 /* TBObjectModel.swift */,
 			);
 			path = DB;
+			sourceTree = "<group>";
+		};
+		E9D7570E247FE44D009CCA90 /* TableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				E9D7570F247FE47E009CCA90 /* SelectTableViewCell.swift */,
+			);
+			path = TableViewCell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -459,9 +473,11 @@
 				E9BFC34424653F9B00FC10A3 /* Extensions.swift in Sources */,
 				E940286A245FF2B000DAC196 /* ViewController.swift in Sources */,
 				E9402866245FF2B000DAC196 /* AppDelegate.swift in Sources */,
+				E9D75710247FE47E009CCA90 /* SelectTableViewCell.swift in Sources */,
 				E992F18A247BCABC00814B82 /* BtnSelectViewController.swift in Sources */,
 				E9402868245FF2B000DAC196 /* SceneDelegate.swift in Sources */,
 				E977E3552464183A00FF5991 /* SideMenuTableViewController.swift in Sources */,
+				E9D75712247FED86009CCA90 /* BtnUpdateDeleteViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

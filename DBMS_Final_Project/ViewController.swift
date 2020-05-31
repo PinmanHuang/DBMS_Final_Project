@@ -201,7 +201,7 @@ class ViewController: UIViewController {
         ).first!
         let db = try? Connection("\(path)/db.sqlite3")
         do {
-            
+            // try db.run(users.insert(email <- "alice@mac.com", name <- "Alice"))
             let rowid = try db?.run(
                 doctorsObject.DOCTORS.insert(
                     doctorsObject.DocEmail <- "doctor1@gmail.com",
@@ -291,6 +291,7 @@ class ViewController: UIViewController {
             t.column(logObject.PatID)
             t.column(logObject.TreID)
             t.column(logObject.Timestamp)
+            t.primaryKey(logObject.DocID, logObject.PatID, logObject.TreID)
         })
     }
 }
