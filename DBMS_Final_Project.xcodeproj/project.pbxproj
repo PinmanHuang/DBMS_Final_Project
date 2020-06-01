@@ -10,6 +10,7 @@
 		1C0FED5EE917FA1027394CDD /* Pods_DBMS_Final_ProjectTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 753260A644DC506E8C37B761 /* Pods_DBMS_Final_ProjectTests.framework */; };
 		52636ABC51518994EC82A429 /* Pods_DBMS_Final_Project_DBMS_Final_ProjectUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45A0DC732730161E26B635E6 /* Pods_DBMS_Final_Project_DBMS_Final_ProjectUITests.framework */; };
 		E90025242484CA9500F59E3B /* BtnAggregateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E90025232484CA9500F59E3B /* BtnAggregateViewController.swift */; };
+		E90025262484DC8400F59E3B /* BtnNestedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E90025252484DC8400F59E3B /* BtnNestedViewController.swift */; };
 		E9402866245FF2B000DAC196 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9402865245FF2B000DAC196 /* AppDelegate.swift */; };
 		E9402868245FF2B000DAC196 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9402867245FF2B000DAC196 /* SceneDelegate.swift */; };
 		E940286A245FF2B000DAC196 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9402869245FF2B000DAC196 /* ViewController.swift */; };
@@ -59,6 +60,7 @@
 		E11F6075E2EF8052EA2A1F74 /* Pods-DBMS_Final_ProjectTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DBMS_Final_ProjectTests.release.xcconfig"; path = "Target Support Files/Pods-DBMS_Final_ProjectTests/Pods-DBMS_Final_ProjectTests.release.xcconfig"; sourceTree = "<group>"; };
 		E5C4479CCC24A6E9F7D7B7AB /* Pods_DBMS_Final_Project.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DBMS_Final_Project.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E90025232484CA9500F59E3B /* BtnAggregateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BtnAggregateViewController.swift; sourceTree = "<group>"; };
+		E90025252484DC8400F59E3B /* BtnNestedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BtnNestedViewController.swift; sourceTree = "<group>"; };
 		E9402862245FF2B000DAC196 /* DBMS_Final_Project.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DBMS_Final_Project.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E9402865245FF2B000DAC196 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E9402867245FF2B000DAC196 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -203,6 +205,7 @@
 				E992F18B247C209C00814B82 /* BtnInsertViewController.swift */,
 				E9D75711247FED86009CCA90 /* BtnUpdateDeleteViewController.swift */,
 				E90025232484CA9500F59E3B /* BtnAggregateViewController.swift */,
+				E90025252484DC8400F59E3B /* BtnNestedViewController.swift */,
 			);
 			path = ButtonView;
 			sourceTree = "<group>";
@@ -502,6 +505,7 @@
 				E9D75712247FED86009CCA90 /* BtnUpdateDeleteViewController.swift in Sources */,
 				E90025242484CA9500F59E3B /* BtnAggregateViewController.swift in Sources */,
 				E9D757192483C1C8009CCA90 /* SQLAllDataViewController.swift in Sources */,
+				E90025262484DC8400F59E3B /* BtnNestedViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

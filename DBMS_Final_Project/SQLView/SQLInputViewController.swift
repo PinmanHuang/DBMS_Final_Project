@@ -15,7 +15,10 @@ class SQLInputViewController: UIViewController {
     var selectIndex = 0                 // select Query id
     var typeIndex = 0                   // select Query Type id
     var typeInit = ["SELECT-FROM-WHERE", "IN", "COUNT"]
-    var SQLInit = ["SELECT * FROM DOCTORS WHERE DocName='doctor_1'", "SELECT * FROM DOCTORS IN", "SELECT DivID, COUNT(*), AVG(Salary) FROM DOCTORS GROUP BY DivID"]
+    var SQLInit = [
+        "SELECT * FROM DOCTORS WHERE DocName='doctor_1'",
+        "SELECT DocName, Room, DocEmail FROM DOCTORS WHERE DivID IN (SELECT DivID FROM DIVISIONS WHERE DivName='Gastroenterology and Hepatology')",
+        "SELECT DivID, COUNT(*), AVG(Salary) FROM DOCTORS GROUP BY DivID"]
     
     var stmtLen = 0
     var attrs = Array<String>()
@@ -114,13 +117,17 @@ class SQLInputViewController: UIViewController {
              "DELETE FROM DOCTORS WHERE DocName='Apple'",
              "INSERT INTO DOCTORS ('DocName', 'Room', 'Salary', 'DocEmail', 'DivID') VALUES ('Apple', 'C111', 30000, 'apple@gmail.com', 10)",
              "UPDATE DOCTORS SET 'Salary' = 40000 WHERE DocName='Apple'"],
-            ["1", "2", "3", "4"],
+            ["SELECT DocName, Room, DocEmail FROM DOCTORS WHERE DivID IN (SELECT DivID FROM DIVISIONS WHERE DivName='Gastroenterology and Hepatology')",    // 取得胃腸肝膽科所有醫生資料
+             "SELECT PatName, PatPhone, PatEmail, Address FROM PATIENT WHERE PatID NOT IN (SELECT PatID FROM LOG WHERE DocID IN (SELECT DocID FROM DOCTORS WHERE DocName='doctor_1'))", // 取得不是 doctor_1 的病患資料
+             "SELECT DocName, Room, DocEmail FROM DOCTORS WHERE EXISTS(SELECT * FROM DIVISIONS WHERE DocID=MgrDocID)",          // 取得科室主管姓名
+             "SELECT DocName, Room, DocEmail FROM DOCTORS WHERE NOT EXISTS(SELECT * FROM LOG WHERE DOCTORS.DocID=LOG.DocID)"],  // 取得沒有病患的醫生資訊
             ["SELECT DivID, COUNT(*), AVG(Salary) FROM DOCTORS GROUP BY DivID",                 // 取得各科室醫生數以及平均薪資
              "SELECT DivID, COUNT(*), AVG(Salary), SUM(Salary) FROM DOCTORS GROUP BY DivID",    // 取得各科室醫生數以及平均薪資以及薪資總合
              "SELECT MAX(Salary), MIN(Salary), AVG(Salary) FROM DOCTORS",                       // 取得醫生最高、最低、平均薪資
              "SELECT MAX(Salary), MIN(Salary), AVG(Salary) FROM DOCTORS",                       // 取得醫生最高、最低、平均薪資
              "SELECT DivID, COUNT(*), AVG(Salary) FROM DOCTORS GROUP BY DivID",                 // 取得各科室醫生數以及平均薪資
              "SELECT DIVISIONS.DivID, DivName, COUNT(*) FROM DOCTORS, DIVISIONS WHERE DOCTORS.DivID=DIVISIONS.DivID GROUP BY DIVISIONS.DivID HAVING COUNT(*)>2"]    // 取得科室醫生數量大於2的科室資料
+            
         ]
         sqlTextView.text = defaultSQL[selectIndex][typeIndex]
     }
