@@ -43,7 +43,6 @@ class SQLInputViewController: UIViewController {
             self.typeBtn.setTitle(self.typeInit[index], for: .normal)
             self.sqlTextView.text = self.SQLInit[index]
             self.selectIndex = index
-//            self.changeField()
         }
     }
     

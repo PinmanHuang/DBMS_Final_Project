@@ -15,6 +15,7 @@ class SQLAllDataViewController: UIViewController {
     var attrs: Array<String>!
     var datas: Array<Array<String>>!
     var selectDatas = Array<String>()
+//    var flag: Int?          // show(1) second label or not(0)
 
     @IBOutlet var tableView: UITableView!
     
@@ -52,9 +53,9 @@ extension SQLAllDataViewController: UITableViewDelegate, UITableViewDataSource {
         }
         print("row: \(indexPath.row), data: \(datas[0][0])")
         cell.label.text = attrs[0]+":"
-        cell.label_2.text = attrs[1]+":"
+//        cell.label_2.text = attrs[1]+":"
         cell.dataLabel.text = datas[indexPath.row][0]
-        cell.dataLabel_2.text = datas[indexPath.row][1]
+//        cell.dataLabel_2.text = datas[indexPath.row][1]
         return cell
     }
     
