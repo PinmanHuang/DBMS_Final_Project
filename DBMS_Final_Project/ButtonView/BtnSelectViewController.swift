@@ -16,6 +16,7 @@ class BtnSelectViewController: UIViewController {
     @IBOutlet var selectBtn: UIButton!
     @IBOutlet var whereLabel: UILabel!
     @IBOutlet var tableView: UITableView!
+    @IBOutlet weak var whereSwitch: UISwitch!
     
     var selectTB = 0                        // 選擇的 Tabel
     let whereID = ["DocID", "DivID", "HosID", "PatID", "TreID", "DocID"]
@@ -30,7 +31,11 @@ class BtnSelectViewController: UIViewController {
         
     }
     override func viewWillAppear(_ animated: Bool) {
-        self.selectData()
+        if whereSwitch.isOn {
+            self.selectWhereData()
+        } else {
+            self.selectData()
+        }
     }
     
     @IBAction func selectBtnOnClick(_ sender: Any) {
@@ -42,15 +47,19 @@ class BtnSelectViewController: UIViewController {
             self.selectBtn.setTitle(item, for: .normal)
             self.whereLabel.text = "WHERE \(self.whereID[index])=1"
             self.selectTB = index
-            self.selectData()
+            if self.whereSwitch.isOn {
+                self.selectWhereData()
+            } else {
+                self.selectData()
+            }
         }
     }
     
     @IBAction func whereSwitch(_ sender: UISwitch!) {
         if sender.isOn {
-            print("isOn")
+            selectWhereData()
         } else {
-            print("ifOff")
+            selectData()
         }
     }
     
@@ -102,6 +111,66 @@ class BtnSelectViewController: UIViewController {
             }
         case 5:
             TB = logObject.LOG
+            for data in try! (db?.prepare(TB))! {
+                dataLen += 1
+                datas[dataLen] = "\(data[logObject.DocID]), \(data[logObject.PatID]), \(data[logObject.TreID])"
+                print("doc_id: \(data[logObject.DocID]), pat_id: \(data[logObject.PatID]), tre_id: \(data[logObject.TreID])")
+            }
+        default:
+            print("default")
+        }
+        tableView.reloadData()
+        
+    }
+    
+    func selectWhereData() {
+        // initial
+        dataLen = 0
+        datas = [:]
+        
+        // select table
+        let path = NSSearchPathForDirectoriesInDomains(
+            .documentDirectory, .userDomainMask, true
+        ).first!
+        let db = try? Connection("\(path)/db.sqlite3")
+        switch selectTB {
+        case 0:
+            TB = (doctorsObject.DOCTORS).where(doctorsObject.DocID==1)
+            for data in try! (db?.prepare(TB))! {
+                dataLen += 1
+                datas[Int(data[doctorsObject.DocID])] = "\(data[doctorsObject.DocID]), \(data[doctorsObject.DocEmail]), \(data[doctorsObject.DocName]!)"
+                print("id: \(data[doctorsObject.DocID]), email: \(data[doctorsObject.DocEmail]), name: \(data[doctorsObject.DocName]!)")
+            }
+        case 1:
+            TB = (divisionsObject.DIVISIONS).where(divisionsObject.DivID==1)
+            for data in try! (db?.prepare(TB))! {
+                dataLen += 1
+                datas[Int(data[divisionsObject.DivID])] = "\(data[divisionsObject.DivID]), \(data[divisionsObject.DivName]!)"
+                print("id: \(data[divisionsObject.DivID]), name: \(data[divisionsObject.DivName]!), office: \(data[divisionsObject.Office]!), hos_id: \(data[divisionsObject.HosID]), mgr_doc: \(data[divisionsObject.MgrDocID])")
+            }
+        case 2:
+            TB = (hospitalsObject.HOSPITALS).where(hospitalsObject.HosID==1)
+            for data in try! (db?.prepare(TB))! {
+                dataLen += 1
+                datas[Int(data[hospitalsObject.HosID])] = "\(data[hospitalsObject.HosID]), \(data[hospitalsObject.HosName]!)"
+                print("id: \(data[hospitalsObject.HosID]), name: \(data[hospitalsObject.HosName]!), address: \(data[hospitalsObject.HosAddr]!)")
+            }
+        case 3:
+            TB = (patientObject.PATIENT).where(patientObject.PatID==1)
+            for data in try! (db?.prepare(TB))! {
+                dataLen += 1
+                datas[Int(data[patientObject.PatID])] = "\(data[patientObject.PatID]), \(data[patientObject.PatName]!)"
+                print("id: \(data[patientObject.PatID]), name: \(data[patientObject.PatName]!), email: \(data[patientObject.PatEmail])")
+            }
+        case 4:
+            TB = (treatmentsObject.TREATMENTS).where(treatmentsObject.TreID==1)
+            for data in try! (db?.prepare(TB))! {
+                dataLen += 1
+                datas[Int(data[treatmentsObject.TreID])] = "\(data[treatmentsObject.TreID]), \(data[treatmentsObject.TreName])"
+                print("id: \(data[treatmentsObject.TreID]), name: \(data[treatmentsObject.TreName]), dosage: \(data[treatmentsObject.Dosage])")
+            }
+        case 5:
+            TB = (logObject.LOG).where(logObject.DocID==1)
             for data in try! (db?.prepare(TB))! {
                 dataLen += 1
                 datas[dataLen] = "\(data[logObject.DocID]), \(data[logObject.PatID]), \(data[logObject.TreID])"

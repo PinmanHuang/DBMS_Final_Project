@@ -520,6 +520,7 @@
                         <outlet property="selectView" destination="c70-cx-XtM" id="wJR-xb-Hqu"/>
                         <outlet property="tableView" destination="jvT-Ys-7h5" id="Ug0-wG-Doz"/>
                         <outlet property="whereLabel" destination="VPb-xO-grJ" id="yVs-FQ-xCn"/>
+                        <outlet property="whereSwitch" destination="rGc-RB-CI6" id="EkW-yc-FWo"/>
                         <segue destination="6Sv-we-Zpt" kind="presentation" identifier="select" modalPresentationStyle="fullScreen" id="Cl1-0L-HeX"/>
                     </connections>
                 </viewController>
